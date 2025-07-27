@@ -64,7 +64,7 @@ fetch("https://newsapi.org/v2/top-headlines?category=science&apiKey=d9f934355b1a
     });
   })
   .catch(() => {
-    alert('')
+ 
     newsList.innerHTML = "<p>Could not load news 🛑</p>";
   });
 
