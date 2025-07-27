@@ -104,11 +104,6 @@
              
 
         </div>
-         <div class="container">
-    <div class="label">Time & Date</div>
-    <div class="time" id="time">00:00:00</div>
-    <div class="date" id="date">Loading date...</div>
-  </div>
         </div>
       </div>
       
@@ -130,25 +125,6 @@
     
 
     <script src="script.js"></script>
-      <script>
-    function updateClock() {
-  const now = new Date();
 
-  const hours = now.getHours().toString().padStart(2, "0");
-  const minutes = now.getMinutes().toString().padStart(2, "0");
-  const seconds = now.getSeconds().toString().padStart(2, "0");
-
-  const timeStr = `${hours}:${minutes}:${seconds}`;
-  document.getElementById("time").textContent = timeStr;
-
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const dateStr = now.toLocaleDateString(undefined, options);
-  document.getElementById("date").textContent = dateStr;
-}
-
-setInterval(updateClock, 1000);
-updateClock();
-
-  </script>
 </body>
 </html>
