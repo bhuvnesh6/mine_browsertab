@@ -13,6 +13,7 @@
             min-height: 100vh;
             height: auto;
             background: radial-gradient(#113, #000);
+            overflow-x: hidden;
         }
 
         .atom{
