@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="bookmark">
+        <ul>
+            <li> <a href="https://accounts.google.com/b/0/AddMailService"><img src="assets\mail.png" alt="gmail"></a></li>
+            <li> <a href="https://www.youtube.com/"><img src="assets\youtube.png" alt="youtube"></a></li>
+            <li> <a href="https://maps.google.com/"><img src="assets/maps.png" alt="maps"></a></li>
+            <li> <a href="https://www.facebook.com/"><img src="assets/facebook.png" alt="facebook"></a></li>
+            <li> <a href="https://x.com/"><img src="assets/x.png" alt="x"></a></li>
+            <li> <a href="https://www.instagram.com/"><img src="assets/insta.png" alt="insta"></a></li>
+            <li> <a href="https://www.microsoft365.com/launch/Excel/"><img src="assets/excel.png" alt="excel"></a></li>
+        </ul>
+    </nav>
+
+    <h1 class="welcome">Welcome mr. Bhuvnesh </h1>
+
+    <div class="column">
+        <div class="search">
+
+            <div class="inpdin">
+                <img src="assets/google-icon.png" alt="icon-google">
+                            <input type="text" id="searchInput" name="search" onkeypress="handleSearch(event)" placeholder="search on google">
+            </div>
+            <div class="btndiv">
+            <button class="btn searchbtn"><img src="assets/search.png" alt="search"></button>
+            </div>
+             <div class="btndiv">
+             <button class="speak btn " id="voiceBtn"><img src="assets/mic.png" alt="mic"></button>
+             </div>
+             <div class="btndiv">
+             <button class="searchimg btn" id="imageInput"><img src="assets/img-search.png" alt="image search"></button>
+             </div>
+        </div>
+<div class="atom">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        
+    </div>
+    </div>
+    
+
+    <div class="column2">
+
+      <div class="impsites cldv">
+        <h2>Important sites</h2>
+        <a href="https://chatgpt.com">
+         <span class="site"> 
+            <img src="assets/gpt.png" alt="">
+            <span class="inner"><h2>Chatgpt</h2>
+             <p>chatgpt.com</p>
+            </span>
+        </span>
+        </a>
+       
+        <a href="https://linkedin.com">
+         <span class="site"> 
+            <img src="assets/linkedin.png" alt="">
+            <span class="inner"><h2>linkdin</h2>
+             <p>linkdin.com</p>
+            </span>
+        </span>
+        </a>
+
+               <h2>Weather report </h2>
+        <div class="weather">
+           <div class="ww">
+          
+            <div class="location">
+                
+                <div class="text">
+                    <img src="assets/location.png" alt="location">
+                    <p class="city">Loading...</p>
+                </div>
+                <h3>Location</h3>
+            </div>
+
+             <div class="location">
+                
+                <div class="text">
+                    <img src="assets/temp.png" alt="location">
+                    <p><span class="temp">Loading...</span>°C</p>
+                </div>
+                <h3>Temperature</h3>
+            </div>
+
+             <div class="location">
+                
+                <div class="text">
+                    <img src="assets/condition.png" alt="location">
+                    <p class="cond">Loading...</p>
+                </div>
+                <h3>Condition</h3>
+            </div>
+             
+             
+
+        </div>
+         <div class="container">
+    <div class="label">Time & Date</div>
+    <div class="time" id="time">00:00:00</div>
+    <div class="date" id="date">Loading date...</div>
+  </div>
+        </div>
+      </div>
+      
+      <div class="wn cldv">
+
+        <h2>Latest in science & tech</h2>
+        <div class="coo">
+
+
+            <div class="widget news">
+
+  <div id="newsList" class="news-list">Loading...</div>
+</div>
+
+        </div>
+
+      </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+      <script>
+    function updateClock() {
+  const now = new Date();
+
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+
+  const timeStr = `${hours}:${minutes}:${seconds}`;
+  document.getElementById("time").textContent = timeStr;
+
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const dateStr = now.toLocaleDateString(undefined, options);
+  document.getElementById("date").textContent = dateStr;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+  </script>
+</body>
+</html>
