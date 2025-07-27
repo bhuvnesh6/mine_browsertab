@@ -40,21 +40,20 @@ function error(err) {
 // Sci/Tech News (Example using NewsAPI)
 const newsList = document.getElementById("newsList");
 
-        
-fetch("https://newsapi.org/v2/top-headlines?category=science&apiKey=d9f934355b1a497db0e211aafa749bad&pageSize=6&language=en")
+fetch("https://newsdata.io/api/1/news?apikey=pub_4ba57037943749b692b97164dbbcad69&category=science,technology&language=en")
   .then(res => res.json())
   .then(data => {
     newsList.innerHTML = "";
-    data.articles.forEach(article => {
+    data.results.forEach(article => {
       const div = document.createElement("div");
       div.className = "news-item";
 
       const img = document.createElement("img");
-      img.src = article.urlToImage || "https://via.placeholder.com/80x60?text=No+Image";
+      img.src = article.image_url || "https://via.placeholder.com/80x60?text=No+Image";
 
       const a = document.createElement("a");
       a.className = "headline";
-      a.href = article.url;
+      a.href = article.link;
       a.target = "_blank";
       a.innerText = article.title;
 
@@ -64,7 +63,6 @@ fetch("https://newsapi.org/v2/top-headlines?category=science&apiKey=d9f934355b1a
     });
   })
   .catch(() => {
- 
     newsList.innerHTML = "<p>Could not load news 🛑</p>";
   });
 
